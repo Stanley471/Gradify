@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradify</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-slate-600 font-normal">
+    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-black/5">
+        <div class="mx-auto max-w-7xl flex items-center justify-between px-6 py-3">
+            <div class="flex items-center">
+                <!-- G and Gradify Icon -->
+                <div
+                    class="w-8 h-8 bg-gradient-to-r from-blue-500 to-green-500 text-white flex items-center justify-center rounded-full font-bold text-lg mr-3 ring-1 ring-white/30 shadow-md shadow-indigo-500/20">
+                    G
+                </div>
+                <span
+                    class="text-xl font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500">
+                    Gradify
+                </span>
+            </div>
+            <!-- Hamburger Icon -->
+            <button class="flex flex-col justify-center items-center w-10 h-10 rounded-md hover:bg-black/5 transition"
+                aria-label="Open navigation menu">
+                <span class="block w-7 h-0.5 bg-slate-800/80 rounded my-0.5"></span>
+                <span class="block w-7 h-0.5 bg-slate-800/80 rounded my-0.5"></span>
+                <span class="block w-7 h-0.5 bg-slate-800/80 rounded my-0.5"></span>
+            </button>
+        </div>
+    </header>
+    <div>
+        <main class="mx-auto max-w-4xl px-6 py-10">
+            <h1 class="text-2xl font-semibold text-slate-800">CGPA Calculator</h1>
+            <p class="mt-2 text-sm text-slate-500">Enter your courses, grades, and credit hours. Calculation logic will
+                be added separately.</p>
+
+            <form id="cgpa-form" class="mt-8 space-y-6" action="#" method="post">
+                <section aria-labelledby="courses-heading" class="rounded-xl border border-black/5 bg-white shadow-sm">
+                    <div class="px-5 py-4 border-b border-black/5 flex items-center justify-between">
+                        <h2 id="courses-heading" class="text-sm font-medium text-slate-700">Courses</h2>
+                        <span class="text-xs text-slate-400">Add/remove rows via logic later</span>
+                    </div>
+                    <div class="p-5 overflow-x-auto">
+                        <table class="min-w-full text-left align-middle">
+                            <thead class="text-xs uppercase tracking-wider text-slate-500">
+                                <tr>
+                                    <th class="py-2 pr-6">Course</th>
+                                    <th class="py-2 pr-6">Grade</th>
+                                    <th class="py-2 pr-6">Credits</th>
+                                    <th class="py-2 pr-6">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm text-slate-700">
+                                <tr class="border-t border-black/5">
+                                    <td class="py-3 pr-6">
+                                        <label class="sr-only" for="course-1">Course 1</label>
+                                        <input id="course-1" name="courses[0][name]" type="text"
+                                            placeholder="e.g., Calculus I"
+                                            class="w-full rounded-md border border-black/10 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500/30" />
+                                    </td>
+                                    <td class="py-3 pr-6">
+                                        <label class="sr-only" for="grade-1">Grade 1</label>
+                                        <select id="grade-1" name="courses[0][grade]" required
+                                            class="w-full rounded-md border border-black/10 px-3 py-2 bg-white outline-none focus:ring-2 focus:ring-blue-500/30">
+                                            <option value="">Select</option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </td>
+                                    <td class="py-3 pr-6">
+                                        <label class="sr-only" for="credits-1">Credits 1</label>
+                                        <input id="credits-1" name="courses[0][credits]" type="number" step="0.5"
+                                            min="0" placeholder="e.g., 3" required
+                                            class="w-28 rounded-md border border-black/10 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500/30" />
+                                    </td>
+                                    <td class="py-3 pr-6">
+                                        <button type="button" data-remove-row
+                                            class="px-3 py-1.5 rounded-md border border-black/10 text-red-600 hover:bg-red-50">Remove</button>
+                                    </td>
+                                </tr>
+                                <tr class="border-t border-black/5">
+                                    <td class="py-3 pr-6">
+                                        <label class="sr-only" for="course-2">Course 2</label>
+                                        <input id="course-2" name="courses[1][name]" type="text"
+                                            placeholder="e.g., Physics"
+                                            class="w-full rounded-md border border-black/10 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500/30" />
+                                    </td>
+                                    <td class="py-3 pr-6">
+                                        <label class="sr-only" for="grade-2">Grade 2</label>
+                                        <select id="grade-2" name="courses[1][grade]" required
+                                            class="w-full rounded-md border border-black/10 px-3 py-2 bg-white outline-none focus:ring-2 focus:ring-blue-500/30">
+                                            <option value="">Select</option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </td>
+                                    <td class="py-3 pr-6">
+                                        <label class="sr-only" for="credits-2">Credits 2</label>
+                                        <input id="credits-2" name="courses[1][credits]" type="number" step="0.5"
+                                            min="0" placeholder="e.g., 4" required
+                                            class="w-28 rounded-md border border-black/10 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500/30" />
+                                    </td>
+                                    <td class="py-3 pr-6">
+                                        <button type="button" data-remove-row
+                                            class="px-3 py-1.5 rounded-md border border-black/10 text-red-600 hover:bg-red-50">Remove</button>
+                                    </td>
+                                </tr>
+                                <tr class="border-t border-black/5">
+                                    <td class="py-3 pr-6">
+                                        <label class="sr-only" for="course-3">Course 3</label>
+                                        <input id="course-3" name="courses[2][name]" type="text"
+                                            placeholder="e.g., Programming"
+                                            class="w-full rounded-md border border-black/10 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500/30" />
+                                    </td>
+                                    <td class="py-3 pr-6">
+                                        <label class="sr-only" for="grade-3">Grade 3</label>
+                                        <select id="grade-3" name="courses[2][grade]" required
+                                            class="w-full rounded-md border border-black/10 px-3 py-2 bg-white outline-none focus:ring-2 focus:ring-blue-500/30">
+                                            <option value="">Select</option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                        </select>
+                                    </td>
+                                    <td class="py-3 pr-6">
+                                        <label class="sr-only" for="credits-3">Credits 3</label>
+                                        <input id="credits-3" name="courses[2][credits]" type="number" step="0.5"
+                                            min="0" placeholder="e.g., 2" required
+                                            class="w-28 rounded-md border border-black/10 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500/30" />
+                                    </td>
+                                    <td class="py-3 pr-6">
+                                        <button type="button" data-remove-row
+                                            class="px-3 py-1.5 rounded-md border border-black/10 text-red-600 hover:bg-red-50">Remove</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="mt-4 flex items-center justify-end">
+                            <button type="button" data-add-row
+                                class="px-4 py-2 rounded-md border border-black/10 text-slate-700 hover:bg-slate-50">Add
+                                Course</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section aria-labelledby="summary-heading" class="rounded-xl border border-black/5 bg-white shadow-sm">
+                    <div class="px-5 py-4 border-b border-black/5">
+                        <h2 id="summary-heading" class="text-sm font-medium text-slate-700">Summary</h2>
+                    </div>
+                    <div class="p-5 grid gap-4 md:grid-cols-3">
+                        <div>
+                            <label for="total-credits" class="block text-xs font-medium text-slate-500">Total
+                                Credits</label>
+                            <input id="total-credits" name="summary[totalCredits]" type="number" step="0.5" min="0"
+                                placeholder="Auto" readonly
+                                class="mt-1 w-full rounded-md border border-black/10 bg-slate-50 px-3 py-2 text-slate-500" />
+                        </div>
+                        <div>
+                            <label for="total-grade-points" class="block text-xs font-medium text-slate-500">Total Grade
+                                Points</label>
+                            <input id="total-grade-points" name="summary[totalGradePoints]" type="number" step="0.01"
+                                min="0" placeholder="Auto" readonly
+                                class="mt-1 w-full rounded-md border border-black/10 bg-slate-50 px-3 py-2 text-slate-500" />
+                        </div>
+                        <div>
+                            <label for="cgpa" class="block text-xs font-medium text-slate-500">CGPA</label>
+                            <input id="cgpa" name="summary[cgpa]" type="number" step="0.01" min="0" max="10"
+                                placeholder="Auto" readonly
+                                class="mt-1 w-full rounded-md border border-black/10 bg-slate-50 px-3 py-2 text-slate-500" />
+                        </div>
+                    </div>
+                </section>
+
+                <div class="flex items-center justify-end gap-3">
+                    <button type="reset"
+                        class="px-4 py-2 rounded-md border border-black/10 text-slate-600 hover:bg-slate-50">Clear</button>
+                    <button type="submit"
+                        class="px-4 py-2 rounded-md bg-gradient-to-r from-blue-500 to-green-500 text-white shadow-md shadow-indigo-500/20">Calculate
+                        CGPA</button>
+                </div>
+            </form>
+        </main>
+    </div>
+    <script src="calculateCGPA.js"></script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
