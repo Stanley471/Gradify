@@ -32,29 +32,642 @@
         </div>
     </header>
 
-    <section
-        class="flex flex-col items-center justify-center text-center px-4 py-20 bg-gradient-to-b from-white via-white to-blue-50">
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-6">
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-green-400 to-green-600">
-                Never Lose Track
-            </span>
-            <span class="block text-slate-700">
-                Of Your <span class="text-green-600 font-black drop-shadow">Results</span> Again
-            </span>
-        </h1>
-        <p class="max-w-xl mb-8 text-lg md:text-xl text-slate-600 text-left">
-            Gradify makes monitoring your performance effortless. Organize, visualize, and stay ahead of your
-            results—all in one place.
-        </p>
-        <a href="calculateCGPA.html"
-            class="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-blue-500 to-green-500 text-white text-lg font-semibold shadow-md hover:from-blue-600 hover:to-green-600 transition-colors duration-200">
-            Get Started
-        </a>
+    <section class="px-4 py-20 bg-gradient-to-b from-white via-white to-blue-50">
+        <!-- Mobile Layout (centered) -->
+        <div class="lg:hidden flex flex-col items-center justify-center text-center page-load-animate hero-content">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-green-400 to-green-600">
+                    Never Lose Track
+                </span>
+                <span class="block text-slate-700">
+                    Of Your <span class="text-green-600 font-black drop-shadow">Results</span> Again
+                </span>
+            </h1>
+            <p class="max-w-xl mb-8 text-lg md:text-xl text-slate-600 text-left">
+                Gradify makes monitoring your performance effortless. Organize, visualize, and stay ahead of your
+                results—all in one place.
+            </p>
+            <a href="calculateCGPA.html"
+                class="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-blue-500 to-green-500 text-white text-lg font-semibold shadow-md hover:from-blue-600 hover:to-green-600 transition-colors duration-200">
+                Get Started
+            </a>
+        </div>
+
+        <!-- Desktop Layout (two columns) -->
+        <div class="hidden lg:flex items-center justify-between max-w-7xl mx-auto">
+            <!-- Left Column - Text Content -->
+            <div class="flex-1 max-w-2xl page-load-animate hero-content">
+                <h1 class="text-5xl xl:text-6xl font-extrabold mb-6 text-left">
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-green-400 to-green-600">
+                        Never Lose Track
+                    </span>
+                    <span class="block text-slate-700">
+                        Of Your <span class="text-green-600 font-black drop-shadow">Results</span> Again
+                    </span>
+                </h1>
+                <p class="max-w-xl mb-8 text-lg xl:text-xl text-slate-600 text-left">
+                    Gradify makes monitoring your performance effortless. Organize, visualize, and stay ahead of your
+                    results—all in one place.
+                </p>
+                <a href="calculateCGPA.html"
+                    class="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-blue-500 to-green-500 text-white text-lg font-semibold shadow-md hover:from-blue-600 hover:to-green-600 transition-colors duration-200">
+                    Get Started
+                </a>
+            </div>
+
+            <!-- Right Column - Animated Grades Image -->
+            <div class="flex-1 flex justify-center items-center pl-8 page-load-animate hero-visual">
+                <div class="relative w-full max-w-md">
+                    <!-- Animated floating grade cards -->
+                    <div class="relative">
+                        <!-- Grade Card 1 - A+ -->
+                        <div class="absolute -top-4 -left-4 bg-white rounded-lg shadow-lg p-4 transform rotate-12">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-green-600">A</div>
+                                <div class="text-xs text-slate-500">MTH 121</div>
+                            </div>
+                        </div>
+
+                        <!-- Grade Card 2 - B -->
+                        <div class="absolute top-8 right-2 bg-white rounded-lg shadow-lg p-4 transform -rotate-6">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-blue-600">B</div>
+                                <div class="text-xs text-slate-500">GSP 101</div>
+                            </div>
+                        </div>
+
+                        <!-- Grade Card 3 - A -->
+                        <div class="absolute bottom-4 left-8 bg-white rounded-lg shadow-lg p-4 transform rotate-3">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-green-600">A</div>
+                                <div class="text-xs text-slate-500">CHEM 101</div>
+                            </div>
+                        </div>
+
+                        <!-- Grade Card 4 - B+ -->
+                        <div class="absolute -bottom-2 -right-6 bg-white rounded-lg shadow-lg p-4 transform -rotate-12">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-blue-600">B</div>
+                                <div class="text-xs text-slate-500">COS 101</div>
+                            </div>
+                        </div>
+
+                        <!-- Central CGPA Display -->
+                        <div
+                            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-500 to-green-500 rounded-full p-6 shadow-xl">
+                            <div class="text-center text-white">
+                                <div class="text-3xl font-bold">4.45</div>
+                                <div class="text-sm opacity-90">CGPA</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
 
 
 
+
+    <!-- Statistics Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-50 to-green-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                    Trusted by Students <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500">Worldwide</span>
+                </h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Join thousands of students who are already tracking their academic success with Gradify.
+                </p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Stat Card 1 -->
+                <div
+                    class="stat-card bg-slate-50 rounded-xl border border-black/10 shadow-lg hover:shadow-xl transition-all duration-500 p-8 text-center transform opacity-0 translate-y-8">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="text-4xl font-bold text-slate-800 mb-2"><span class="count-up"
+                            data-target="50000">0</span>+</div>
+                    <div class="text-lg text-slate-600">Active Students</div>
+                    <div class="text-sm text-slate-500 mt-2">Growing daily across universities worldwide</div>
+                </div>
+
+                <!-- Stat Card 2 -->
+                <div
+                    class="stat-card bg-slate-50 rounded-xl border border-black/10 shadow-lg hover:shadow-xl transition-all duration-500 p-8 text-center transform opacity-0 translate-y-8">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="text-4xl font-bold text-slate-800 mb-2"><span class="count-up"
+                            data-target="2500000">0</span>+</div>
+                    <div class="text-lg text-slate-600">Grades Tracked</div>
+                    <div class="text-sm text-slate-500 mt-2">Accurate calculations across all subjects</div>
+                </div>
+
+                <!-- Stat Card 3 -->
+                <div
+                    class="stat-card bg-slate-50 rounded-xl border border-black/10 shadow-lg hover:shadow-xl transition-all duration-500 p-8 text-center transform opacity-0 translate-y-8">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <div class="text-4xl font-bold text-slate-800 mb-2"><span class="count-up"
+                            data-target="94">0</span>%</div>
+                    <div class="text-lg text-slate-600">Grade Improvement</div>
+                    <div class="text-sm text-slate-500 mt-2">Students see better results after tracking</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 page-load-animate features-title">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                    Why Choose <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500">Gradify</span>?
+                </h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Powerful tools designed to help you track, analyze, and improve your academic performance
+                    effortlessly.
+                </p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature Card 1 -->
+                <div class="feature-card bg-slate-50 rounded-xl border border-black/10 shadow-lg hover:shadow-xl transition-all duration-500 p-8 transform opacity-0 translate-y-8"
+                    style="animation-delay: 0.1s;">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-6 shadow-md">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-4">Smart CGPA Tracking</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Automatically calculate your CGPA with our intuitive grade tracking system. Monitor your
+                        progress across all courses and semesters with real-time updates.
+                    </p>
+                </div>
+
+                <!-- Feature Card 2 -->
+                <div class="feature-card bg-slate-50 rounded-xl border border-black/10 shadow-lg hover:shadow-xl transition-all duration-500 p-8 transform opacity-0 translate-y-8"
+                    style="animation-delay: 0.3s;">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center mb-6 shadow-md">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-4">Performance Analytics</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Get detailed insights into your academic performance with visual charts and trends. Identify
+                        strengths and areas for improvement with data-driven analytics.
+                    </p>
+                </div>
+
+                <!-- Feature Card 3 -->
+                <div class="feature-card bg-slate-50 rounded-xl border border-black/10 shadow-lg hover:shadow-xl transition-all duration-500 p-8 transform opacity-0 translate-y-8"
+                    style="animation-delay: 0.5s;">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mb-6 shadow-md">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-4">Easy Organization</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Keep all your grades organized in one place. Add, edit, and manage your courses effortlessly
+                        with our user-friendly interface designed for students.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll Animation Styles -->
+    <style>
+        .feature-card.animate-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        .feature-card {
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        /* Statistics Cards Animation */
+        .stat-card.animate-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        .stat-card {
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        /* Testimonial Cards Animation */
+        .testimonial-card.animate-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        .testimonial-card {
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        /* Count Up Animation */
+        .count-up {
+            display: inline-block;
+        }
+
+        /* Page Load Animation */
+        .page-load-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .page-load-animate.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Specific delays for different sections */
+        .hero-content {
+            animation-delay: 0.1s;
+        }
+
+        .hero-visual {
+            animation-delay: 0.3s;
+        }
+
+        .features-title {
+            animation-delay: 0.1s;
+        }
+
+        .feature-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .feature-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .feature-card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+    </style>
+
+    <!-- Page Load and Scroll Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Page Load Animation
+            const pageLoadElements = document.querySelectorAll('.page-load-animate');
+            pageLoadElements.forEach(element => {
+                // Get computed style to check for animation-delay
+                const computedStyle = window.getComputedStyle(element);
+                const delay = computedStyle.animationDelay || '0s';
+                const delayMs = parseFloat(delay) * 1000;
+
+                setTimeout(() => {
+                    element.classList.add('animate-in');
+                }, delayMs);
+            });
+
+            // Count Up Animation Function
+            function animateCountUp(element, target, duration = 2000) {
+                const start = 0;
+                const increment = target / (duration / 16);
+                let current = start;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+
+                    // Format numbers with commas for large numbers
+                    if (target >= 1000) {
+                        element.textContent = Math.floor(current).toLocaleString();
+                    } else {
+                        element.textContent = Math.floor(current);
+                    }
+                }, 16);
+            }
+
+            // Scroll Animation for Cards (Feature, Stats, and Testimonials)
+            const allCards = document.querySelectorAll('.feature-card, .stat-card, .testimonial-card');
+
+            // Create intersection observer for cards
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Add delay based on animation-delay style
+                        const delay = entry.target.style.animationDelay || '0s';
+                        const delayMs = parseFloat(delay) * 1000;
+
+                        setTimeout(() => {
+                            entry.target.classList.add('animate-in');
+
+                            // If it's a stat card, animate the numbers
+                            if (entry.target.classList.contains('stat-card')) {
+                                const countUpElements = entry.target.querySelectorAll('.count-up');
+                                countUpElements.forEach(element => {
+                                    const target = parseInt(element.getAttribute('data-target'));
+                                    animateCountUp(element, target);
+                                });
+                            }
+                        }, delayMs);
+
+                        // Stop observing this element
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            // Observe all cards
+            allCards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gradient-to-br from-slate-50 to-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                    What Students <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500">Say</span>
+                </h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Hear from students who have transformed their academic journey with Gradify.
+                </p>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial Card 1 -->
+                <div
+                    class="testimonial-card bg-white rounded-xl border border-black/10 shadow-lg hover:shadow-xl transition-all duration-500 p-8 transform opacity-0 translate-y-8">
+                    <div class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                S
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-slate-800">Obimma Stanley</h4>
+                                <p class="text-sm text-slate-500">Computer Science, UNN</p>
+                            </div>
+                        </div>
+                        <div class="flex text-yellow-400 mb-3">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <blockquote class="text-slate-600 leading-relaxed">
+                        "Gradify completely changed how I track my grades. I went from a 2.8 GPA to 3.6 in just one
+                        semester! The visual insights helped me identify my weak subjects and focus my study time
+                        better."
+                    </blockquote>
+                </div>
+
+                <!-- Testimonial Card 2 -->
+                <div class="testimonial-card bg-white rounded-xl border border-black/10 shadow-lg hover:shadow-xl transition-all duration-500 p-8 transform opacity-0 translate-y-8"
+                    style="animation-delay: 0.2s;">
+                    <div class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                M
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-slate-800">Mowoe Daniel</h4>
+                                <p class="text-sm text-slate-500">Statistics, UNIPORT</p>
+                            </div>
+                        </div>
+                        <div class="flex text-yellow-400 mb-3">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <blockquote class="text-slate-600 leading-relaxed">
+                        "The grade prediction feature is incredible! It helped me stay on track throughout the semester.
+                        I love how easy it is to add courses and see my progress in real-time. Highly recommend!"
+                    </blockquote>
+                </div>
+
+                <!-- Testimonial Card 3 -->
+                <div class="testimonial-card bg-white rounded-xl border border-black/10 shadow-lg hover:shadow-xl transition-all duration-500 p-8 transform opacity-0 translate-y-8"
+                    style="animation-delay: 0.4s;">
+                    <div class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                A
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-slate-800">Okenwa David</h4>
+                                <p class="text-sm text-slate-500">Business, LASU</p>
+                            </div>
+                        </div>
+                        <div class="flex text-yellow-400 mb-3">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <blockquote class="text-slate-600 leading-relaxed">
+                        "As a pre-med student, keeping track of my GPA is crucial for medical school applications.
+                        Gradify makes it so simple and gives me peace of mind knowing exactly where I stand
+                        academically."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Brand Section -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-10 h-10 bg-gradient-to-r from-blue-500 to-green-500 text-white flex items-center justify-center rounded-full font-bold text-xl mr-3">
+                            G
+                        </div>
+                        <span
+                            class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500">
+                            Gradify
+                        </span>
+                    </div>
+                    <p class="text-slate-300 mb-6 max-w-md">
+                        The ultimate grade tracking platform for students. Monitor your academic progress, calculate
+                        CGPA, and achieve your educational goals with confidence.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.748-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001 12.017.001z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-slate-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="calculateCGPA.html" class="text-slate-300 hover:text-white transition-colors">CGPA
+                                Calculator</a></li>
+                        <li><a href="login.html" class="text-slate-300 hover:text-white transition-colors">Sign In</a>
+                        </li>
+                        <li><a href="signup.html" class="text-slate-300 hover:text-white transition-colors">Sign Up</a>
+                        </li>
+                        <li><a href="#features" class="text-slate-300 hover:text-white transition-colors">Features</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Support</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-slate-300 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Tutorials</a></li>
+                        <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Report Bug</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="border-t border-slate-800 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-slate-400 text-sm mb-4 md:mb-0">
+                        © 2024 Gradify. All rights reserved.
+                    </div>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </body>
 
