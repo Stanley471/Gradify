@@ -120,6 +120,129 @@ document.addEventListener('DOMContentLoaded', function () {
     reindexRows();
 });
 
+// CGPA Calculator Logic (5.0 scale)
+// Author: GitHub Copilot
+// This script dynamically calculates CGPA, total credits, and total grade points as the user enters data.
+// It also supports adding/removing courses and keeps the summary section updated.
+
+// Grade to point mapping (5.0 scale)
+const gradePoints = {
+    'A': 5.0,
+    'B': 4.0,
+    'C': 3.0,
+    'D': 2.0,
+    'E': 1.0,
+    'F': 0.0
+};
+
+// Utility: Get all course rows
+function getCourseRows() {
+    return Array.from(document.querySelectorAll('#cgpa-form tbody tr'));
+}
+
+// Utility: Extract course data from a row
+function getCourseData(row) {
+    const name = row.querySelector('input[type="text"]').value.trim();
+    const grade = row.querySelector('select').value;
+    const credits = parseFloat(row.querySelector('input[type="number"]').value) || 0;
+    return { name, grade, credits };
+}
+
+// Calculate and update summary
+function updateSummary() {
+    const rows = getCourseRows();
+    let totalCredits = 0;
+    let totalGradePoints = 0;
+    let cgpa = 0;
+
+    rows.forEach(row => {
+        const { grade, credits } = getCourseData(row);
+        if (grade && credits > 0) {
+            totalCredits += credits;
+            totalGradePoints += (gradePoints[grade] || 0) * credits;
+        }
+    });
+    cgpa = totalCredits > 0 ? (totalGradePoints / totalCredits) : 0;
+
+    // Update summary fields
+    document.getElementById('total-credits').value = totalCredits.toFixed(2);
+    document.getElementById('total-grade-points').value = totalGradePoints.toFixed(2);
+    document.getElementById('cgpa').value = cgpa.toFixed(2);
+}
+
+// Add a new course row
+function addCourseRow() {
+    const tbody = document.querySelector('#cgpa-form tbody');
+    const idx = tbody.children.length;
+    const tr = document.createElement('tr');
+    tr.className = 'border-t border-black/5';
+    tr.innerHTML = `
+        <td class="py-3 pr-6">
+            <label class="sr-only" for="course-${idx+1}">Course ${idx+1}</label>
+            <input id="course-${idx+1}" name="courses[${idx}][name]" type="text" placeholder="e.g., New Course"
+                class="w-full rounded-md border border-black/10 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500/30" />
+        </td>
+        <td class="py-3 pr-6">
+            <label class="sr-only" for="grade-${idx+1}">Grade ${idx+1}</label>
+            <select id="grade-${idx+1}" name="courses[${idx}][grade]" required
+                class="w-full rounded-md border border-black/10 px-3 py-2 bg-white outline-none focus:ring-2 focus:ring-blue-500/30">
+                <option value="">Select</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+            </select>
+        </td>
+        <td class="py-3 pr-6">
+            <label class="sr-only" for="credits-${idx+1}">Credits ${idx+1}</label>
+            <input id="credits-${idx+1}" name="courses[${idx}][credits]" type="number" step="0.5" min="0" placeholder="e.g., 3" required
+                class="w-28 rounded-md border border-black/10 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500/30" />
+        </td>
+        <td class="py-3 pr-6">
+            <button type="button" data-remove-row class="px-3 py-1.5 rounded-md border border-black/10 text-red-600 hover:bg-red-50">Remove</button>
+        </td>
+    `;
+    tbody.appendChild(tr);
+    updateSummary();
+}
+
+// Remove a course row
+function removeCourseRow(btn) {
+    const row = btn.closest('tr');
+    row.parentNode.removeChild(row);
+    updateSummary();
+}
+
+// Event listeners
+function setupCGPAEvents() {
+    const form = document.getElementById('cgpa-form');
+    // Add row
+    form.querySelector('[data-add-row]').addEventListener('click', addCourseRow);
+    // Remove row (delegated)
+    form.querySelector('tbody').addEventListener('click', function(e) {
+        if (e.target && e.target.matches('[data-remove-row]')) {
+            removeCourseRow(e.target);
+        }
+    });
+    // Update summary on input change
+    form.addEventListener('input', function(e) {
+        if (e.target.matches('input, select')) {
+            updateSummary();
+        }
+    });
+    // Update summary on form reset
+    form.addEventListener('reset', function() {
+        setTimeout(updateSummary, 10);
+    });
+    // Initial summary
+    updateSummary();
+}
+
+// Initialize on DOMContentLoaded
+window.addEventListener('DOMContentLoaded', setupCGPAEvents);
+
 
 
 

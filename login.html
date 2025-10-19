@@ -22,13 +22,31 @@
                     <a href="/">Gradify</a>
                 </span>
             </div>
-            <!-- Hamburger Icon -->
-            <button class="flex flex-col justify-center items-center w-10 h-10 rounded-md hover:bg-black/5 transition"
-                aria-label="Open navigation menu">
+
+            <!-- Desktop nav links (visible on md and up) -->
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-sm text-slate-700 hover:text-slate-900 transition-colors">Home</a>
+                <a href="calculateCGPA.html" class="text-sm text-slate-700 hover:text-slate-900 transition-colors">Calculate CGPA</a>
+                <a href="table.html" class="text-sm text-slate-700 hover:text-slate-900 transition-colors">Table</a>
+                <a href="signup.html" class="text-sm text-blue-500 hover:text-blue-600 font-medium transition-colors">Sign up</a>
+            </nav>
+
+            <!-- Hamburger (mobile only) -->
+            <button id="mobile-menu-button" class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-md hover:bg-black/5 transition" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
                 <span class="block w-7 h-0.5 bg-slate-800/80 rounded my-0.5"></span>
                 <span class="block w-7 h-0.5 bg-slate-800/80 rounded my-0.5"></span>
                 <span class="block w-7 h-0.5 bg-slate-800/80 rounded my-0.5"></span>
             </button>
+        </div>
+
+        <!-- Mobile menu (hidden by default, toggled by hamburger) -->
+        <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
+            <nav class="flex flex-col space-y-2">
+                <a href="index.html" class="block py-2 text-slate-700 rounded hover:bg-slate-50">Home</a>
+                <a href="calculateCGPA.html" class="block py-2 text-slate-700 rounded hover:bg-slate-50">Calculate CGPA</a>
+                <a href="table.html" class="block py-2 text-slate-700 rounded hover:bg-slate-50">Table</a>
+                <a href="signup.html" class="block py-2 text-blue-500 rounded hover:bg-blue-50 font-medium">Sign up</a>
+            </nav>
         </div>
     </header>
 
@@ -94,6 +112,19 @@
             </div>
         </div>
     </main>
+
+    <script>
+        (function() {
+            const btn = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            if (!btn || !menu) return;
+            btn.addEventListener('click', function() {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!expanded));
+                menu.classList.toggle('hidden');
+            });
+        })();
+    </script>
 
 </body>
 
