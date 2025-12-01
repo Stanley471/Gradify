@@ -1,87 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gradify</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body class="bg-white text-slate-600 font-normal">
-    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-black/5">
-        <div class="mx-auto max-w-7xl flex items-center justify-between px-6 py-3">
-            <div class="flex items-center">
-                <!-- G and Gradify Icon -->
-                <div
-                    class="w-8 h-8 bg-gradient-to-r from-blue-500 to-green-500 text-white flex items-center justify-center rounded-full font-bold text-lg mr-3 ring-1 ring-white/30 shadow-md shadow-indigo-500/20">
-                    G
-                </div>
-                <span
-                    class="text-xl font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500">
-                    <a href="/">Gradify </a>
-                </span>
-            </div>
-
-            <!-- Desktop nav links (visible on md and up) -->
-            <nav class="hidden md:flex items-center space-x-6">
-                <a href="index.html" class="flex items-center text-sm text-slate-700 hover:text-slate-900 transition-colors">
-                    <svg class="w-4 h-4 mr-2 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1V9.5z"/></svg>
-                    Home
-                </a>
-                <a href="calculateCGPA.html" class="flex items-center text-sm text-slate-700 hover:text-slate-900 transition-colors">
-                    <svg class="w-4 h-4 mr-2 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m0 0l-3-3m3 3l3-3M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    Calculate CGPA
-                </a>
-                <a href="table.html" class="flex items-center text-sm text-slate-700 hover:text-slate-900 transition-colors">
-                    <svg class="w-4 h-4 mr-2 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v4H3V3zm0 7h18v4H3v-4zm0 7h18v4H3v-4z"/></svg>
-                    Table
-                </a>
-                <a href="signup.html" class="flex items-center text-sm text-blue-500 hover:text-blue-600 font-medium transition-colors">
-                    <svg class="w-4 h-4 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 10-8 0v4M5 21h14a2 2 0 002-2v-5a4 4 0 00-4-4H7a4 4 0 00-4 4v5a2 2 0 002 2z"/></svg>
-                    Sign up
-                </a>
-            </nav>
-
-            <!-- Hamburger (mobile only) - finer lines -->
-            <button id="mobile-menu-button" class="md:hidden flex flex-col justify-center items-center w-9 h-9 rounded-md hover:bg-black/5 transition" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
-                <span class="block w-5 h-px bg-slate-800/80 rounded my-0.5"></span>
-                <span class="block w-5 h-px bg-slate-800/80 rounded my-0.5"></span>
-                <span class="block w-5 h-px bg-slate-800/80 rounded my-0.5"></span>
-            </button>
-        </div>
-
-        <!-- Mobile menu panel (compact floating panel, not full-screen) -->
-        <div id="mobile-menu" class="md:hidden hidden">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-3 w-full max-w-sm mx-auto mt-2">
-                    <nav class="flex flex-col">
-                        <a href="index.html" class="flex items-center gap-3 py-2 px-2 rounded hover:bg-slate-50 transition-colors">
-                            <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1V9.5z"/></svg>
-                            <span class="text-slate-700 text-sm">Home</span>
-                        </a>
-                        <a href="calculateCGPA.html" class="flex items-center gap-3 py-2 px-2 rounded hover:bg-slate-50 transition-colors">
-                            <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m0 0l-3-3m3 3l3-3M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            <span class="text-slate-700 text-sm">Calculate CGPA</span>
-                        </a>
-                        <a href="table.html" class="flex items-center gap-3 py-2 px-2 rounded hover:bg-slate-50 transition-colors">
-                            <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v4H3V3zm0 7h18v4H3v-4zm0 7h18v4H3v-4z"/></svg>
-                            <span class="text-slate-700 text-sm">Table</span>
-                        </a>
-                        <a href="login.html" class="flex items-center gap-3 py-2 px-2 rounded hover:bg-slate-50 transition-colors">
-                            <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A9 9 0 1118.879 6.196"/></svg>
-                            <span class="text-slate-700 text-sm">Sign In</span>
-                        </a>
-                        <a href="signup.html" class="flex items-center gap-3 py-2 px-2 rounded hover:bg-slate-50 transition-colors">
-                            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 10-8 0v4M5 21h14a2 2 0 002-2v-5a4 4 0 00-4-4H7a4 4 0 00-4 4v5a2 2 0 002 2z"/></svg>
-                            <span class="text-blue-500 text-sm font-medium">Sign up</span>
-                        </a>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-
+$title = 'Home - Gradify';
+ob_start();
+?>
     <section class="px-4 py-20 bg-gradient-to-b from-white via-white to-blue-50">
         <!-- Mobile Layout (centered) -->
         <div class="lg:hidden flex flex-col items-center justify-center text-center page-load-animate hero-content">
@@ -716,52 +637,7 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Quick Links -->
-                <div>
-                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
-                    <ul class="space-y-3">
-                        <li><a href="index.html" class="text-slate-300 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="calculateCGPA.html" class="text-slate-300 hover:text-white transition-colors">CGPA
-                                Calculator</a></li>
-                        <li><a href="login.html" class="text-slate-300 hover:text-white transition-colors">Sign In</a>
-                        </li>
-                        <li><a href="signup.html" class="text-slate-300 hover:text-white transition-colors">Sign Up</a>
-                        </li>
-                        <li><a href="#features" class="text-slate-300 hover:text-white transition-colors">Features</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Support -->
-                <div>
-                    <h3 class="text-lg font-semibold mb-6">Support</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Help Center</a></li>
-                        <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Contact Us</a></li>
-                        <li><a href="#" class="text-slate-300 hover:text-white transition-colors">FAQ</a></li>
-                        <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Tutorials</a></li>
-                        <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Report Bug</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Bottom Section -->
-            <div class="border-t border-slate-800 mt-12 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <div class="text-slate-400 text-sm mb-4 md:mb-0">
-                        © 2024 Gradify. All rights reserved.
-                    </div>
-                    <div class="flex space-x-6 text-sm">
-                        <a href="#" class="text-slate-400 hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="#" class="text-slate-400 hover:text-white transition-colors">Terms of Service</a>
-                        <a href="#" class="text-slate-400 hover:text-white transition-colors">Cookie Policy</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-</body>
-
-</html>
+<?php
+$content = ob_get_clean();
+include 'public/views/layout.php';
+?>

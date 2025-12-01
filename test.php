@@ -5,7 +5,7 @@
  * 
  * $title = 'Page Title';
  * $content = 'path/to/content.php';
- * $show_sidebar = false; // optional
+ * Note: Sidebar is always included as an overlay (no need to set $show_sidebar)
  * $main_class = 'custom-class'; // optional
  * $additional_scripts = ['js/custom.js']; // optional
  * include 'layout.php';
@@ -14,7 +14,7 @@
 // Set default values if not provided
 $title = $title ?? 'Gradify';
 $content = $content ?? '';
-$show_sidebar = $show_sidebar ?? false;
+// Sidebar is always included as an overlay - no need for $show_sidebar variable
 $main_class = $main_class ?? 'min-h-screen';
 $additional_scripts = $additional_scripts ?? [];
 ?>
@@ -29,9 +29,9 @@ $additional_scripts = $additional_scripts ?? [];
 <body class="bg-white text-slate-600 font-normal">
     <?php include 'header.php'; ?>
     
-    <?php if ($show_sidebar): ?>
-        <?php include 'sidebar.php'; ?>
-    <?php endif; ?>
+    <!-- Sidebar Component -->
+    <!-- Always included as an overlay sidebar that can be toggled open/closed -->
+    <?php include 'sidebar.php'; ?>
 
     <main class="<?= htmlspecialchars($main_class) ?>">
         <?php 
@@ -45,7 +45,9 @@ $additional_scripts = $additional_scripts ?? [];
 
     <?php include 'footer.php'; ?>
 
+    <!-- JavaScript for interactive components -->
     <script src="js/mobile-menu.js"></script>
+    <script src="js/sidebar.js"></script>
     <?php foreach ($additional_scripts as $script): ?>
         <script src="<?= htmlspecialchars($script) ?>"></script>
     <?php endforeach; ?>

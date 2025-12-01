@@ -8,7 +8,7 @@
 
 // Set page variables
 $title = 'Example Page - Gradify';
-$show_sidebar = false; // Set to true if you want sidebar
+// Note: Sidebar is always included as an overlay sidebar (no need to set $show_sidebar)
 $main_class = 'min-h-screen px-4 py-10'; // Custom main container classes
 
 // Page content (can be inline or from a separate file)
@@ -25,7 +25,7 @@ ob_start();
         <ul class="space-y-2 text-slate-600">
             <li>✅ Reusable header component</li>
             <li>✅ Reusable footer component</li>
-            <li>✅ Optional sidebar component</li>
+            <li>✅ Overlay sidebar component (always available, toggleable)</li>
             <li>✅ Clean, organized Tailwind classes</li>
             <li>✅ Mobile-responsive design</li>
         </ul>

@@ -1,58 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login to Gradify</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body>
-    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-black/5">
-        <div class="mx-auto max-w-7xl flex items-center justify-between px-6 py-3">
-            <div class="flex items-center">
-                <!-- G and Gradify Icon -->
-                <div
-                    class="w-8 h-8 bg-gradient-to-r from-blue-500 to-green-500 text-white flex items-center justify-center rounded-full font-bold text-lg mr-3 ring-1 ring-white/30 shadow-md shadow-indigo-500/20">
-                    G
-                </div>
-                <span
-                    class="text-xl font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500">
-                    <a href="/">Gradify</a>
-                </span>
-            </div>
-
-            <!-- Desktop nav links (visible on md and up) -->
-            <nav class="hidden md:flex items-center space-x-6">
-                <a href="index.html" class="text-sm text-slate-700 hover:text-slate-900 transition-colors">Home</a>
-                <a href="calculateCGPA.html" class="text-sm text-slate-700 hover:text-slate-900 transition-colors">Calculate CGPA</a>
-                <a href="table.html" class="text-sm text-slate-700 hover:text-slate-900 transition-colors">Table</a>
-                <a href="signup.html" class="text-sm text-blue-500 hover:text-blue-600 font-medium transition-colors">Sign up</a>
-            </nav>
-
-            <!-- Hamburger (mobile only) -->
-            <button id="mobile-menu-button" class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-md hover:bg-black/5 transition" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
-                <span class="block w-7 h-0.5 bg-slate-800/80 rounded my-0.5"></span>
-                <span class="block w-7 h-0.5 bg-slate-800/80 rounded my-0.5"></span>
-                <span class="block w-7 h-0.5 bg-slate-800/80 rounded my-0.5"></span>
-            </button>
-        </div>
-
-        <!-- Mobile menu (hidden by default, toggled by hamburger) -->
-        <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
-            <nav class="flex flex-col space-y-2">
-                <a href="index.html" class="block py-2 text-slate-700 rounded hover:bg-slate-50">Home</a>
-                <a href="calculateCGPA.html" class="block py-2 text-slate-700 rounded hover:bg-slate-50">Calculate CGPA</a>
-                <a href="table.html" class="block py-2 text-slate-700 rounded hover:bg-slate-50">Table</a>
-                <a href="signup.html" class="block py-2 text-blue-500 rounded hover:bg-blue-50 font-medium">Sign up</a>
-            </nav>
-        </div>
-    </header>
-
-    <main class="min-h-screen bg-gradient-to-br from-slate-50 to-white flex items-center justify-center px-6 py-12">
-        <div class="w-full max-w-md">
-            <!-- Login Form Card -->
+<?php
+$title = 'Login - Gradify';
+ob_start();
+?>
+<main class="min-h-screen bg-slate-50 px-4 py-10">
             <div class="bg-white rounded-xl shadow-lg border border-black/5 p-8">
                 <div class="text-center mb-8">
                     <h1 class="text-2xl font-semibold text-slate-800 mb-2">Welcome Back</h1>
@@ -110,22 +60,9 @@
                     <a href="#" class="hover:text-slate-600 transition-colors">Support</a>
                 </div>
             </div>
-        </div>
-    </main>
+        </div> </main>
 
-    <script>
-        (function() {
-            const btn = document.getElementById('mobile-menu-button');
-            const menu = document.getElementById('mobile-menu');
-            if (!btn || !menu) return;
-            btn.addEventListener('click', function() {
-                const expanded = btn.getAttribute('aria-expanded') === 'true';
-                btn.setAttribute('aria-expanded', String(!expanded));
-                menu.classList.toggle('hidden');
-            });
-        })();
-    </script>
-
-</body>
-
-</html>
+<?php
+$content = ob_get_clean();
+include 'public/views/layout.php';
+?>

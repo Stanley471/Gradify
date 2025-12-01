@@ -1,36 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - Gradify</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body class="bg-white text-slate-600 font-normal">
-    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-black/5">
-        <div class="mx-auto max-w-7xl flex items-center justify-between px-6 py-3">
-            <div class="flex items-center">
-                <!-- G and Gradify Icon -->
-                <div
-                    class="w-8 h-8 bg-gradient-to-r from-blue-500 to-green-500 text-white flex items-center justify-center rounded-full font-bold text-lg mr-3 ring-1 ring-white/30 shadow-md shadow-indigo-500/20">
-                    G
-                </div>
-                <span
-                    class="text-xl font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500">
-                    Gradify
-                </span>
-            </div>
-            <!-- Hamburger Icon -->
-            <button class="flex flex-col justify-center items-center w-10 h-10 rounded-md hover:bg-black/5 transition"
-                aria-label="Open navigation menu">
-                <span class="block w-7 h-0.5 bg-slate-800/80 rounded my-0.5"></span>
-                <span class="block w-7 h-0.5 bg-slate-800/80 rounded my-0.5"></span>
-                <span class="block w-7 h-0.5 bg-slate-800/80 rounded my-0.5"></span>
-            </button>
-        </div>
-    </header>
+<?php
+$title = 'Sign Up - Gradify';
+ob_start();
+?>
 
     <main class="min-h-screen bg-gradient-to-br from-slate-50 to-white flex items-center justify-center px-6 py-12">
         <div class="w-full max-w-md">
@@ -120,17 +91,7 @@
                 </div>
             </div>
 
-            <!-- Footer Links -->
-            <div class="mt-8 text-center">
-                <div class="flex justify-center space-x-6 text-xs text-slate-400">
-                    <a href="#" class="hover:text-slate-600 transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-slate-600 transition-colors">Terms of Service</a>
-                    <a href="#" class="hover:text-slate-600 transition-colors">Support</a>
-                </div>
-            </div>
-        </div>
-    </main>
-
-</body>
-
-</html>
+<?php 
+$content = ob_get_clean();
+include 'public/views/layout.php';
+?>
